@@ -24,7 +24,7 @@ public class HeroMove : MonoBehaviour
         ant.SetInteger("h", (int)h);
 
         float v = Input.GetAxisRaw("Vertical");
-        transform.Translate(Vector3.up * v * moveSpeed * Time.deltaTime, Space.World);
+        transform.Translate(Vector3.forward * v * moveSpeed * Time.deltaTime, Space.World);
 
         ant.SetInteger("v", (int)v);
 
