@@ -394,11 +394,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &630324900 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4699532213555611038, guid: 44ed1a4f39f3e6a4cb1516ce8ab2d5e4, type: 3}
-  m_PrefabInstance: {fileID: 4699532212942224186}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &721033525
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,7 +592,6 @@ GameObject:
   - component: {fileID: 804568189}
   - component: {fileID: 804568188}
   - component: {fileID: 804568187}
-  - component: {fileID: 804568190}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -670,19 +664,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 12.59, y: -1.9, z: -0.013}
---- !u!114 &804568190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 804568186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80450668295b1364b8966fe938c08a31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 630324900}
 --- !u!1 &990489562
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,6 +757,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -50.9, z: 0}
+--- !u!1 &1267781493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1267781496}
+  - component: {fileID: 1267781494}
+  m_Layer: 0
+  m_Name: juben
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1267781494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267781493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd30e9e17011814faf040c675f2c7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Size: 6500000066000000670000006800000069000000
+--- !u!4 &1267781496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267781493}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 323.18637, y: 277.1765, z: 11.403034}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1584527152
 GameObject:
   m_ObjectHideFlags: 0

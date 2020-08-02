@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class HeroMove : MonoBehaviour
 {
 
     public float moveSpeed = 3;
+
 
     private Animator ant;
 
