@@ -10,7 +10,8 @@ public class LoadJvben : MonoBehaviour
     {
         TextAsset jvben = Resources.Load<TextAsset>("jvben");
         string[]rowlist= jvben.text.Split(new char[] {'\n'});
-        for(int i = 1; i < rowlist.Length - 1; i++)
+        int c, i;
+        for (i = 1; i < rowlist.Length - 1; i++)
         {
             string[] row = rowlist[i].Split(new char[] { ',' });
             JvbenList word = new JvbenList();
@@ -20,9 +21,8 @@ public class LoadJvben : MonoBehaviour
             allPrint.Add(word);
         }
         //allPrint[0].id    allPrint[0].speak   allPrint[0].lines
-        int linecount = allPrint.Count;  
-        for (int c = 0; c < linecount; c++)
-            for (int i = 0; i < Size.Length; i++)
+        for (i = 0; i < Size.Length; i++)
+            for (c = 0; c < allPrint.Count; c++)
                 if (Size[i] == allPrint[c].id)
                 {
                     print(allPrint[c].speaker +":"+ "\n" + allPrint[c].lines);
