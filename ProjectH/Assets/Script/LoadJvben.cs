@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class JvbenList
+{
+    public int id;
+    public string speaker;
+    public string lines;
+}
 public class LoadJvben : MonoBehaviour
 {
     List<JvbenList> allPrint = new List<JvbenList>();
@@ -10,7 +16,7 @@ public class LoadJvben : MonoBehaviour
     {
         TextAsset jvben = Resources.Load<TextAsset>("jvben");
         string[]rowlist= jvben.text.Split(new char[] {'\n'});
-        int c, i;
+        int i;
         for (i = 1; i < rowlist.Length - 1; i++)
         {
             string[] row = rowlist[i].Split(new char[] { ',' });
@@ -21,11 +27,11 @@ public class LoadJvben : MonoBehaviour
             allPrint.Add(word);
         }
         //allPrint[0].id    allPrint[0].speak   allPrint[0].lines
-        for (i = 0; i < Size.Length; i++)
-            for (c = 0; c < allPrint.Count; c++)
-                if (Size[i] == allPrint[c].id)
-                {
-                    print(allPrint[c].speaker +":"+ "\n" + allPrint[c].lines);
-                }       
+        foreach(int z in Size)
+        {
+            var pt = allPrint.Find(p => p.id == z);
+            print(pt.lines);
+        }
+   
     }
 }
