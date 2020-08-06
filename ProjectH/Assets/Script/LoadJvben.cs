@@ -32,11 +32,6 @@ public class LoadJvben : MonoBehaviour
             var pt = allPrint.Find(p => p.id == z);
             print(pt.lines);
         }
-        // for (i = 0; i < Size.Length; i++)
-        //     for (c = 0; c < allPrint.Count; c++)
-        //         if (Size[i] == allPrint[c].id)
-        //         {
-        //             print(allPrint[c].speaker +":"+ "\n" + allPrint[c].lines);
-        //         }       
+   
     }
 }
