@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
-
 public class TalkMessage
 {   
     //声明csv的表头
@@ -81,10 +78,10 @@ public class UIWenZi : MonoBehaviour
         for (int i = 1; i < rowlist.Length - 1; i++)
         {
             string[] row = rowlist[i].Split(new char[] { ',' });
-            TalkMessage saying = new TalkMessage();
-            int.TryParse(row[0], out saying.id);
-            saying.talk = row[1];
-            needSpeak.Add(saying);
+            TalkMessage CsvToUnity = new TalkMessage();
+            int.TryParse(row[0], out CsvToUnity.id);
+            CsvToUnity.talk = row[1];
+            needSpeak.Add(CsvToUnity);
         }
     }
 
@@ -101,7 +98,6 @@ public class UIWenZi : MonoBehaviour
         {
             var pt = needSpeak.Find(p => p.id == size[i]);
             
-
             //需要将每次循环前的text重置空白
             text.text = "";
 

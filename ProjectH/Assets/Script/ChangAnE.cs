@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Slider = UnityEngine.UI.Slider;
 
 public class ChangAnE : MonoBehaviour
 {
     [Header("需要长按时间")]
     public float needHoldTime = 2;
-    [Header("已经长按")]
-    public float Hold = 0;
     [Header("进度条")]
     public Slider slider;
     [Header("显示文字")]
@@ -16,13 +16,15 @@ public class ChangAnE : MonoBehaviour
 
 
 
+    public bool LoadOver;
     private Animator ant;
+    float Hold = 0;
+
 
 
     void Start()
     {
-        //ant = GetComponent<Animator>();
-        ant = slider.GetComponent<Animator>();
+        ant = slider.GetComponent<Animator>();      
     }
     private void Update()
     {
@@ -49,9 +51,8 @@ public class ChangAnE : MonoBehaviour
         text.text = ((int)(slider.value*100)).ToString()+"%";
         if (slider.value == 1)
         {
-            //slider.gameObject.SetActive(false);
-            //text.text = "Done！";
             ant.SetBool("isDone", true);
+            LoadOver = true;
         }
             
     }

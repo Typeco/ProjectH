@@ -6,19 +6,7 @@ public class ColliderControl : MonoBehaviour
 { 
     [Header("碰撞盒返回值")]
     public bool InConllider;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool InSliderConllider;
 
 
     private void OnTriggerEnter(Collider collider)
@@ -30,6 +18,7 @@ public class ColliderControl : MonoBehaviour
                 InConllider = true;
                 break;
             case ("ImgConllider"):
+                InSliderConllider = true;
                 break;
             default:
                 break;
@@ -42,7 +31,8 @@ public class ColliderControl : MonoBehaviour
             case ("TipsConllider"):
                 InConllider = false;
                 break;
-            case ("ImgConllider"):               
+            case ("ImgConllider"):
+                InSliderConllider = false;
                 break;
             default:
                 break;
