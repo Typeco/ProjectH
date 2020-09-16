@@ -9,24 +9,16 @@ public class Slot : MonoBehaviour
 
     public GameObject itemInSlot;
 
-
+    public GameObject CheckMake;
     public string slotInfo;
-
-    bool onInfo;
 
     public void ItemOnClicked()
     {
-        onInfo = !onInfo;
-        print("xxx");
-        if (onInfo)
-        {
-            InventoryManager.UpdateItemInfo(slotInfo);
-            
-        }
-        else
-        {
-            InventoryManager.UpdateItemInfo("");
-        }
+        
+
+        InventoryManager.UpdateCheckMake(this.transform.position);
+        InventoryManager.UpdateItemInfo(slotInfo);
+
     }
 
     public void SetupSlot (Item item)
