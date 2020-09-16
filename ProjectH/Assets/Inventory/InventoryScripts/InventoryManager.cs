@@ -12,7 +12,6 @@ public class InventoryManager : MonoBehaviour
     // public Slot slotPrefab;
     public GameObject emptySlot;
     public Text itemInfromation;
-    public bool onInfo;
     public GameObject checkMake;
 
     public List<GameObject> slots = new List<GameObject>();
@@ -48,35 +47,21 @@ public class InventoryManager : MonoBehaviour
 
     public static void UpdateItemInfo(string itemDescription)
     {
-        
-
         if (instance.itemInfromation.text == itemDescription)
         {
-            instance.onInfo = true;
-        }
-        else
-        {
-            instance.onInfo = false;
-        }
-
-        if (instance.onInfo)
-        {
             instance.itemInfromation.text = "";
+            instance.checkMake.SetActive(false);
         }
         else
         {
             instance.itemInfromation.text = itemDescription;
+            instance.checkMake.SetActive(true);
         }
-
-        instance.checkMake.SetActive(!instance.onInfo);
-
     }
-
 
     public static void UpdateCheckMake(Vector3 makePosition)
     {
         instance.checkMake.transform.position = makePosition;
-        //instance.checkMake.SetActive(true);
     }
 
 
