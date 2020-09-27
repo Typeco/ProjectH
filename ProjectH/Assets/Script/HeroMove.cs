@@ -8,13 +8,12 @@ public class HeroMove : MonoBehaviour
 {
 
     public float moveSpeed = 3;
-
+    [Header("设置页面")]
+    public GameObject SettingPage;
 
     private Animator ant;
-
     Rigidbody rigid;
 
-    // Start is called before the first frame update
     void Start()
     {
         ant = GetComponent<Animator>();
@@ -22,9 +21,17 @@ public class HeroMove : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
+        if (SettingPage.activeSelf) return;
+        PlayerControl();
+    }
+
+
+
+    void PlayerControl()
+    {
+
         //X轴方向输入
         float h = Input.GetAxisRaw("Horizontal");
         //transform.Translate(Vector3.right * h * moveSpeed * Time.fixedDeltaTime, Space.World);
@@ -39,13 +46,13 @@ public class HeroMove : MonoBehaviour
 
 
         //设置移动方向的速度（当斜方向移动时 移动速度需要开根号）
-        if (v == 1 && h ==1)
+        if (v == 1 && h == 1)
         {
             double moveZ = 1 / Math.Sqrt(v * v + h * h);
             transform.Translate(Vector3.right * (float)moveZ * moveSpeed * Time.fixedDeltaTime, Space.World);
             transform.Translate(Vector3.forward * v * (float)moveZ * moveSpeed * Time.fixedDeltaTime, Space.World);
         }
-        else if (v == -1 && h ==1)
+        else if (v == -1 && h == 1)
         {
             double moveZ = 1 / Math.Sqrt(v * v + h * h);
             transform.Translate(Vector3.right * (float)moveZ * moveSpeed * Time.fixedDeltaTime, Space.World);
@@ -55,9 +62,9 @@ public class HeroMove : MonoBehaviour
         {
             double moveZ = 1 / Math.Sqrt(v * v + h * h);
             transform.Translate(Vector3.right * -(float)moveZ * moveSpeed * Time.fixedDeltaTime, Space.World);
-            transform.Translate(Vector3.forward *(float)moveZ * moveSpeed * Time.fixedDeltaTime, Space.World);
+            transform.Translate(Vector3.forward * (float)moveZ * moveSpeed * Time.fixedDeltaTime, Space.World);
         }
-        else if (v == -1 && h ==-1)
+        else if (v == -1 && h == -1)
         {
             double moveZ = 1 / Math.Sqrt(v * v + h * h);
             transform.Translate(Vector3.right * -(float)moveZ * moveSpeed * Time.fixedDeltaTime, Space.World);
@@ -69,11 +76,5 @@ public class HeroMove : MonoBehaviour
             transform.Translate(Vector3.right * h * moveSpeed * Time.fixedDeltaTime, Space.World);
 
         }
-
-
-        
-
-
     }
-
 }

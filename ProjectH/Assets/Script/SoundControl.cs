@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIControl : MonoBehaviour
+public class SoundControl : MonoBehaviour
 {
     [Header("进度条")]
     public GameObject SoundSlider;
@@ -38,7 +38,11 @@ public class UIControl : MonoBehaviour
     private void Update()
     {
         OpenSetting();
-        SetSounds();
+        if (SetOpen)
+        {
+            SetSounds();
+        }
+        
     }
 
 /*
